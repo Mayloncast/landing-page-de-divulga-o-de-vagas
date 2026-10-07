@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vagas de Estágio - Cadastro e Divulgação</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Vagas de Estágio</h1>
+            <p>Cadastre e divulgue oportunidades de estágio</p>
+        </header>
+
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-number" id="totalVagas">0</div>
+                <div class="stat-label">Vagas Ativas</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="vagasRemoto">0</div>
+                <div class="stat-label">Remotas</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number" id="vagasPresencial">0</div>
+                <div class="stat-label">Presenciais</div>
+            </div>
+        </div>
+
+        <div class="content-grid">
+            <div class="card">
+                <h2>Cadastrar Vaga</h2>
+                <div class="success-message" id="successMessage">
+                    ✅ Vaga cadastrada com sucesso!
+                </div>
+                <form id="vagaForm">
+                    <div class="form-group">
+                        <label for="titulo">Título da Vaga *</label>
+                        <input type="text" id="titulo" name="titulo" placeholder="Ex: Estagiário de Marketing Digital" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="empresa">Empresa *</label>
+                        <input type="text" id="empresa" name="empresa" placeholder="Nome da empresa" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="area">Área de Atuação *</label>
+                        <select id="area" name="area" required>
+                            <option value="">Selecione a área</option>
+                            <option value="Tecnologia">Tecnologia</option>
+                            <option value="Marketing">Marketing</option>
+                            <option value="Design">Design</option>
+                            <option value="Administração">Administração</option>
+                            <option value="Finanças">Finanças</option>
+                            <option value="Recursos Humanos">Recursos Humanos</option>
+                            <option value="Vendas">Vendas</option>
+                            <option value="Comunicação">Comunicação</option>
+                            <option value="Engenharia">Engenharia</option>
+                            <option value="Outros">Outros</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="modalidade">Modalidade *</label>
+                        <select id="modalidade" name="modalidade" required>
+                            <option value="">Selecione a modalidade</option>
+                            <option value="Remoto">Remoto</option>
+                            <option value="Híbrido">Híbrido</option>
+                            <option value="Presencial">Presencial</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="bolsa">Bolsa Auxílio (R$)</label>
+                        <input type="number" id="bolsa" name="bolsa" placeholder="Ex: 1500" step="0.01">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cidade">Cidade/Estado</label>
+                        <input type="text" id="cidade" name="cidade" placeholder="Ex: São Paulo - SP">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="requisitos">Requisitos</label>
+                        <textarea id="requisitos" name="requisitos" placeholder="Liste os principais requisitos para a vaga"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="descricao">Descrição da Vaga</label>
+                        <textarea id="descricao" name="descricao" placeholder="Descreva as atividades e responsabilidades"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="contato">E-mail de Contato *</label>
+                        <input type="email" id="contato" name="contato" placeholder="recrutamento@empresa.com" required>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Cadastrar Vaga</button>
+                </form>
+            </div>
+
+            <div class="card">
+                <h2>Vagas Disponíveis</h2>
+                <div class="table-container">
+                    <table id="vagasTable">
+                        <thead>
+                            <tr>
+                                <th>Vaga</th>
+                                <th>Empresa</th>
+                                <th>Área</th>
+                                <th>Modalidade</th>
+                                <th>Bolsa</th>
+                                <th>Local</th>
+                                <th>Contato</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="vagasBody">
+                        </tbody>
+                    </table>
+                    <div class="empty-state" id="emptyState">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+                        </svg>
+                        <p>Nenhuma vaga cadastrada ainda.<br>Seja o primeiro a cadastrar!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 Vagas de Estágio - Todos os direitos reservados</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
